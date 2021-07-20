@@ -1,3 +1,5 @@
+/*
+COLORS: */
 *,
 *::after,
 *::before {
@@ -31,102 +33,90 @@ to be added to the total width of an element */
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-/* We control the height and the browser handles the width */
-.header__logo {
-  height: 3,5rem; }
-
-/* transform translate removes 50% of the element itself */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%);
+  /* We control the height and the browser handles the width */
+  /* transform translate removes 50% of the element itself */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3,5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
-/*  */
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1s ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
-
-/* pseudo class link and visited to set initial state of button */
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  transition: all .2s;
-  position: relative;
-  font-size: 1.6rem; }
-
-/* box shadow set 4 different values: 
-1st is X, 2nd is Y, 3rd is blur, 4th is color 
-subtle shadow under button */
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-/* pseudo class active to set state of button when clicked */
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* pseudo class after is treated like a child of element 
-and we need to specify same values as element itself */
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-/* animation-fill-mode set state of 
-button to 0% of animation before animation delay 
-.5s is duration 
-.75s is delay */
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+/* buttons */
+.btn {
+  /* pseudo class link and visited to set initial state of button */
+  /* box shadow set 4 different values: 
+    1st is X, 2nd is Y, 3rd is blur, 4th is color 
+    subtle shadow under button */
+  /* pseudo class active to set state of button when clicked */
+  /* pseudo class after is treated like a child of element 
+    and we need to specify same values as element itself */
+  /* animation-fill-mode set state of 
+    button to 0% of animation before animation delay 
+    .5s is duration 
+    .75s is delay */ }
+  .btn:link, .btn:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; }
 
 @keyframes moveInLeft {
   0% {
