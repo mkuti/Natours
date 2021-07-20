@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* by setting percentage instead of rem
+we allow user to change browser size and 
+our website sizes will be re-calculated in percentage
+of the font-size they choose
+62.5% of 16px (default browser size) = 10px 
+then all our other sizes are in rem which are 
+calculated relatively to the 62.5% of browser font-size*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+/* border-box allows the padding specified not
+to be added to the total width of an element */
+    box-sizing: border-box;
+}
