@@ -12,4 +12,10 @@
         rgba($color-primary-dark, 0.8)),
     url(../img/nat-4.jpg);
     background-size: cover;
+    transform: skewY(-7deg); // creates diagonal on edges of background image
+    margin-top: -10rem; // raise section to remove blank space
+
+    & > * { // style direct child of element * = universal selector (direct child of section)
+        transform: skewY(7deg); // straightens back the feature boxes of section feature
+    }
 }
